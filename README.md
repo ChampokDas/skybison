@@ -86,6 +86,9 @@ build errors
   - Complained about std::numeric_limits not being available
 
 Successful build on Ubuntu-20.04
+Python 3.8.10 (reported as Python 3.8.5 on skybison/pyro)
+GCC 11.1.0 on Linux
+
 ```
 
 ### `./util`
