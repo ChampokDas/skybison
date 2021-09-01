@@ -72,6 +72,22 @@ We vendor several open-source projects for both testing and core functionality.
 They all reside here. Included in this list is a version of CPython, which we
 use for its Python and C library code.
 
+### `Build Errors and Other Notes`
+
+```
+# Needed
+sudo apt-get install -y libbz2-dev libssl-dev liblzma-dev libsqlite3-dev libreadline-dev libffi-dev
+
+build errors
+
+- Remove -Werror from build/third-party/googletest/googletest/CMakeFiles/gtest.dir/flags.make
+  - May just be a bug with gtest -v 1.10.x, see https://github.com/google/googletest/issues/3219
+- Add `#include <limits>` in third-party/benchmark-1.5.1/src/benchmark_register.h
+  - Complained about std::numeric_limits not being available
+
+Successful build on Ubuntu-20.04
+```
+
 ### `./util`
 
 Development tools and helper scripts for building and debugging.
